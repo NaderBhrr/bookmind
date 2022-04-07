@@ -1,0 +1,23 @@
+{
+  "root": "libs/tribe-facade",
+  "sourceRoot": "libs/tribe-facade/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/tribe-facade/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/tribe-facade"],
+      "options": {
+        "jestConfig": "libs/tribe-facade/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
