@@ -1,8 +1,8 @@
 import { fastifyServer, displayServerRunning } from "@bookmind/fastify-server";
-
+import {createServiceAPIs} from "./app/plugins/serviceAPIs"
 const adminServiceServer = async function () {
 
-    const server = fastifyServer();
+    const server = fastifyServer(createServiceAPIs);
 
     try {
         

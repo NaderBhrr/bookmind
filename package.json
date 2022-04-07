@@ -28,7 +28,9 @@
     "typescript": "~4.5.2"
   },
   "dependencies": {
+    "@tribeplatform/gql-client": "^1.2.0",
     "fastify": "^3.27.4",
+    "fastify-cors": "^6.0.3",
     "tslib": "^2.0.0"
   }
 }

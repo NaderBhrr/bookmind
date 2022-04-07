@@ -1,7 +1,7 @@
 import Fastify, { FastifyInstance, FastifyPluginAsync } from "fastify";
 import fastifyPlugin from "fastify-plugin";
 
-export const fastifyServer = async function (...plugins: FastifyPluginAsync[]): Promise<FastifyInstance> {
+export const fastifyServer = async function (...plugins: any): Promise<FastifyInstance> {
 
   const fastifyInstance: FastifyInstance = Fastify({});
 
