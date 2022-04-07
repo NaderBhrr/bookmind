@@ -8,7 +8,7 @@ export function tribeFacade() {
     graphqlUrl: process.env.GRAPHQL_URL
   });
 
-  async function getTribeAccessToekn (client: TribeClient) {
+  async function getTribeAccessToken (client: TribeClient) {
 
     const token = await client.generateToken({
       networkId: process.env.NETWORK_ID,
@@ -22,6 +22,6 @@ export function tribeFacade() {
   }
   return {
     client,
-    getTribeAccessToekn
+    getTribeAccessToken
   }
 }

@@ -1,4 +1,6 @@
-import { FastifyInstance, FastifyPluginCallback, FastifyPluginOptions } from "fastify";
+import { FastifyInstance, FastifyPluginOptions } from "fastify";
+import { AdminServiceAPIs } from "../enums/admin-service-api.enum";
+import { collectEvents, getAllPosts } from "../usecase";
 
 /**
  * The plugin function that handles all the routing of the Admin service
@@ -10,11 +12,9 @@ import { FastifyInstance, FastifyPluginCallback, FastifyPluginOptions } from "fa
  */
 export const createServiceAPIs = async function (fastify: FastifyInstance, options: FastifyPluginOptions, done: any) {
 
-    fastify.get("/test", async (request, reply) => {
+    fastify.get(AdminServiceAPIs.GetPosts, getAllPosts(fastify));
+    fastify.post(AdminServiceAPIs.CollectEvents, collectEvents(fastify));
 
-
-        reply.send({status: "working"})
-    })
 
     done();
 } 
