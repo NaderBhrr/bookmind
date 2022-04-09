@@ -15,13 +15,33 @@ export function tribeFacade() {
       memberId: process.env.MEMBER_ID
     });
 
-    console.log("Toekn >>", token);
-
-    return token
+    return token;
 
   }
+
+  async function getTribeMember (memberId: string) {
+
+    const token = await getTribeAccessToken(client);
+
+    client.setToken(token);
+
+    const member = await client.members.get(memberId);
+
+    return member;
+  }
+
+  async function getTribePosts (limit: number) {
+    const token = await getTribeAccessToken(client);
+
+    client.setToken(token);
+
+    const posts = await client.posts.list({limit})
+
+    return posts;
+  }
+
   return {
-    client,
-    getTribeAccessToken
+    getTribeMember,
+    getTribePosts
   }
 }

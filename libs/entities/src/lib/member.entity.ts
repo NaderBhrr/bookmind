@@ -1,8 +1,9 @@
-import {Entity, Column, PrimaryGeneratedColumn, ManyToOne} from "typeorm";
+import {Entity, Column, ManyToOne, OneToMany, PrimaryColumn, Relation} from "typeorm";
+import {Book} from "@bookmind/entities"
 
 @Entity()
 export class Member {
-    @PrimaryGeneratedColumn()
+    @PrimaryColumn()
     id: number
 
     @Column()
@@ -10,4 +11,7 @@ export class Member {
 
     @Column()
     currentOwnedBook: string;
+
+    // @OneToMany(() => Book, (book) => book.currentOwner)
+    // exchangedBooks: Book[]
 }

@@ -1,14 +1,15 @@
+import { Book } from "@bookmind/entities";
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { adminRepository } from "../repositories/admin.repository";
 
 export const collectEvents = (fastify: FastifyInstance) => async (request: any, reply: FastifyReply) => {
 
-    const { actor, object, id} = request.body.data;
+    const { actor, object} = request.body.data;
 
     const { db } = fastify;
     const { createBook } = adminRepository(db.datasourceInstance);
 
-    const bookModel = {
+    const bookModel: Book = {
         id: object.id,
         bookTitle: object.title,
         currentOwner: actor.id,
@@ -17,11 +18,15 @@ export const collectEvents = (fastify: FastifyInstance) => async (request: any, 
         exchangedAt: object.publishedAt
     }
 
-    console.log("BM >>", bookModel)
-
 
     // const data = extractInformation(request.body)
     await createBook(bookModel);
 
-    reply.status(200).send({message: "Event collected"})
+    reply.status(200).send( {
+        "type": "TEST",
+        "status": "SUCCEEDED",
+        "data": {
+          "challenge": request.body.data.challenge
+        }
+      })
 }

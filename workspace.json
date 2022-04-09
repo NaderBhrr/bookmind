@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "admin": "apps/admin",
+    "datasource": "libs/datasource",
+    "entities": "libs/entities",
     "fastify-server": "libs/fastify-server",
     "tribe-facade": "libs/tribe-facade"
   }

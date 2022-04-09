@@ -1,2 +1,2 @@
-export * from './lib/entities';
-export * from './lib/member.entity'
+export * from './lib/book.entity';
+export * from './lib/member.entity';

@@ -15,9 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@bookmind/datasource": ["libs/datasource/src/index.ts"],
+      "@bookmind/entities": ["libs/entities/src/index.ts"],
       "@bookmind/fastify-server": ["libs/fastify-server/src/index.ts"],
       "@bookmind/tribe-facade": ["libs/tribe-facade/src/index.ts"]
-    }
+    },
+    "typeRoots": ["@types/index.d.ts"]
   },
   "exclude": ["node_modules", "tmp"]
 }

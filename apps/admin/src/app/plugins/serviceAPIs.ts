@@ -1,6 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from "fastify";
+import { REPL_MODE_SLOPPY } from "repl";
 import { AdminServiceAPIs } from "../enums/admin-service-api.enum";
-import { collectEvents, getAllPosts } from "../usecase";
+import { collectEvents, getAllExchanges, getBookOwner } from "../usecase";
 
 /**
  * The plugin function that handles all the routing of the Admin service
@@ -12,7 +13,8 @@ import { collectEvents, getAllPosts } from "../usecase";
  */
 export const createServiceAPIs = async function (fastify: FastifyInstance, options: FastifyPluginOptions, done: any) {
 
-    fastify.get(AdminServiceAPIs.GetPosts, getAllPosts(fastify));
+    fastify.get(AdminServiceAPIs.GetExchanges, getAllExchanges(fastify));
+    fastify.get(AdminServiceAPIs.GetOwner, getBookOwner(fastify));
     fastify.post(AdminServiceAPIs.CollectEvents, collectEvents(fastify));
 
 
