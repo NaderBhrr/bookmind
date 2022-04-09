@@ -13,13 +13,10 @@ export const collectEvents = (fastify: FastifyInstance) => async (request: any, 
         id: object.id,
         bookTitle: object.title,
         currentOwner: actor.id,
-        // initialOwner: actor.id,
         offeredAt: object.publishedAt,
         exchangedAt: object.publishedAt
     }
 
-
-    // const data = extractInformation(request.body)
     await createBook(bookModel);
 
     reply.status(200).send( {

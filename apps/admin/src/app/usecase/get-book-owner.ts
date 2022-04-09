@@ -1,14 +1,13 @@
 import { tribeFacade } from "@bookmind/tribe-facade";
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 
-export const getBookOwner = (fastify: FastifyInstance) => async (request: FastifyRequest, reply: FastifyReply) => {
+export const getBookOwner = (fastify: FastifyInstance) => async (request: any, reply: FastifyReply) => {
 
-    console.log(request.params)
-
+    const {ownerId} = request.params;
+    
     const { getTribeMember} = tribeFacade();
 
-    const member = await getTribeMember('')
+    const member = await getTribeMember(ownerId);
     
-
     reply.send({ data: member })
 }
