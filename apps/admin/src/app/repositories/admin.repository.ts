@@ -18,11 +18,8 @@ export const adminRepository = function (datasourceInstance) {
 
             const newBook = bookRepository.create(book);
 
-            console.log('new book!!', newBook)
+            const result = await bookRepository.save(newBook);
 
-            const r = await bookRepository.save(newBook)
-
-            console.log("saved >>", r)
         } catch (error) {
             console.log(error)
         }
