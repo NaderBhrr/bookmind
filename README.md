@@ -10,6 +10,7 @@ The services are created within the **apps** directory. Each app contain an app 
 The **libs** directory are the functionalities or information that are shared among several apps/services and thus are created as shared modules for the services.
 
 The **documents** directory contains all the docuemntations from idea to troubleshootings for development.
+
 ## Adding capabilities to your workspace
 
 ## Generate an application
@@ -27,6 +28,8 @@ Libraries are shareable across libraries and applications. They can be imported 
 ## Development server
 
 Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+Refer to the troubleshooting documents in order to create the ngrok proxy for the webhook functionality of the application.
 
 ## Build
 
