@@ -9,7 +9,7 @@ You need to have Node runtime and postgres installed on your operating system.
 The services are created within the **apps** directory. Each app contain an app with a single responsibility as admin which is a service for the admin panel.
 The **libs** directory are the functionalities or information that are shared among several apps/services and thus are created as shared modules for the services.
 
-The **documents** directory contains all the docuemntations from idea to troubleshootings for development.
+The **documents** directory contains all the documentations from idea to troubleshootings for development.
 
 ## Adding capabilities to your workspace
 
